@@ -119,5 +119,3 @@ void execute(Token *tokens) {
        current_token = current_token->next;
    }
 }
-
-
