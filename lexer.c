@@ -119,3 +119,19 @@ void execute(Token *tokens) {
        current_token = current_token->next;
    }
 }
+
+int main() {
+    const wchar_t *input_code = L"print() calculate(5) test"; // Example input in wide character format
+    Token *tokens = lexer(input_code);
+
+    execute(tokens);
+
+    Token *current_token = tokens;
+    while (current_token->type != END) {
+        Token *next_token = current_token->next;
+        free_token(current_token);
+        current_token = next_token;
+    }
+
+    return 0;
+}
