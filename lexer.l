@@ -58,6 +58,12 @@
 "<="      { handleToken(LESS_THAN_OR_EQUAL_TO); }
 ">="      { handleToken(GREATER_THAN_OR_EQUAL_TO); }
 "\\"      { handleToken(BACKSLASH); }
+عائم*     { handleToken(FLOAT_STAR); }
+صحيح*     { handleToken(INTEGER_STAR); }
+حرف*      { handleToken(CHARACTER_STAR); }
+STRUCT    { handleToken(STRUCT); }
+STRUCT_STAR { handleToken(STRUCT_STAR); }
+
  // Add more mappings for other Arabic words and tokens
 
 
