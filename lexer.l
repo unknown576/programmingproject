@@ -50,11 +50,10 @@
 "&"       { handleToken(AMPERSAND); }
 "|"       { handleToken(PIPE); }
 "^"       { handleToken(CARET); }
-"~"       { handleToken(TILDE); }
 "%"       { handleToken(PERCENT); }
 "\\"      { handleToken(BACKSLASH); }
 "'"       { handleToken(SINGLE_QUOTE); }
-"\""      { handleToken(DOUBLE_QUOTE); } // Add more mappings for other Arabic words and tokens
+"""      { handleToken(DOUBLE_QUOTE); } // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
