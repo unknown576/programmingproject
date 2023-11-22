@@ -14,7 +14,6 @@
 بينما     { handleToken(TOKEN_WHILE); }
 ل         { handleToken(TOKEN_FOR); }
 صحيح      { handleToken(TOKEN_INTEGER); }
-سلسلة     { handleToken(TOKEN_STRING); }
 عائم      { handleToken(TOKEN_FLOAT); }
 بولياني   { handleToken(TOKEN_BOOLEAN); }
 إدخال     { handleToken(TOKEN_INPUT); }
