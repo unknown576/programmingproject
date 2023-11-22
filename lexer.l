@@ -50,7 +50,6 @@
 "&&"       { handleToken(AMPERSAND); }
 "||"       { handleToken(PIPE); }
 "^"       { handleToken(CARET); }
-"~"       { handleToken(TILDE); }
 "%"       { handleToken(PERCENT); }
 "\\"      { handleToken(BACKSLASH); }
 "'"       { handleToken(SINGLE_QUOTE); }
