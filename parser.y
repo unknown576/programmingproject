@@ -11,21 +11,77 @@ void yyerror(const char *s); // Error handling function
 %}
 
 %union {
-    int intValue;                   // For integer values
-    int *intPtrValue;               // For pointers to integers
-    float floatValue;               // For float values
-    float *floatPtrValue;           // For pointers to floats
-    char charValue;                 // For a single character
-    char *charPtrValue;             // For pointers to char
-    bool boolValue;                 // For boolean values
-    struct MyStruct *myStructValue; // For a pointer to a custom data structure
+    int intValue;            // For integer values
+    float floatValue;        // For floating-point values
+    char charValue;          // For character values
+    bool boolValue;          // For boolean values, using stdbool.h
+
+    float* floatPtr;         // For pointer to float
+    int* intPtr;             // For pointer to int
+    char* charPtr;           // For pointer to char
 }
 
-%token <intValue> INTEGER MODULUS 
-%token <floatValue> FLOAT DIVISION
+
+%token VOID
+%token PRINT
+%token IF
+%token IFELSE
+%token ELSE
+%token WHILE
+%token FOR
+
+%token <intValue> INTEGER
+%token <floatValue> FLOAT
 %token <charValue> CHARACTER
-%token <charPtrValue> STRING // if you have string literals
-%token VOID PRINT IF IFELSE ELSE WHILE FOR BOOLEAN INPUT OUTPUT CLASS RETURN BREAK DEFAULT MAIN FILE INCLUDE NULL
+%token BOOLEAN     // Assuming boolean does not need a specific value in %union
+%token CLASS       // Assuming class does not carry a specific value in %union
+%token FLOAT_PTR  // For pointers, you might want to add specific types in %union
+%token INTEGER_PTR
+%token CHARACTER_PTR
+
+%token RETURN
+%token DEFAULT
+%token INCLUDE
+%token NULL
+
+%token MODULUS
+%token DIVISION
+%token <intValue> ADD
+%token <intValue> MINUS
+%token <intValue> MULTIPLY
+%token <intValue> DIVIDE
+
+%token LEFT_PAREN
+%token RIGHT_PAREN
+%token COMMA
+%token SEMICOLON
+%token PERIOD
+%token COLON
+%token QUESTION_MARK
+%token EXCLAMATION_MARK
+%token LEFT_BRACKET
+%token RIGHT_BRACKET
+%token LEFT_BRACE
+%token RIGHT_BRACE
+
+%token EQUALS
+%token LESS_THAN
+%token GREATER_THAN
+%token AMPERSAND
+%token PIPE
+%token CARET
+%token PERCENT
+%token BACKSLASH
+%token SINGLE_QUOTE
+%token INCREMENT_BY
+%token DECREASE_BY
+%token DIVIDE_BY
+%token MOD_BY
+%token NOT_EQUAL_TO
+%token LESS_THAN_OR_EQUAL_TO
+%token GREATER_THAN_OR_EQUAL_TO
+%token BACKSLASH
+
 
 %%
 /* C-like Grammar Rules */

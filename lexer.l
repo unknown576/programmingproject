@@ -18,11 +18,9 @@
 حرف       { handleToken(CHARACTER); }
 بولياني   { handleToken(BOOLEAN); }
 صف        { handleToken(CLASS); }
-عائم*     { handleToken(FLOAT_STAR); }
-صحيح*     { handleToken(INTEGER_STAR); }
-حرف*      { handleToken(CHARACTER_STAR); }
-STRUCT    { handleToken(STRUCT); }
-STRUCT_STAR { handleToken(STRUCT_STAR); }
+عائم*     { handleToken(FLOAT_PTR); }
+صحيح*     { handleToken(INTEGER_PTR); }
+حرف*      { handleToken(CHARACTER_PTR); }
 
 إرجاع     { handleToken(RETURN); }
 افتراضي   { handleToken(DEFAULT); }
