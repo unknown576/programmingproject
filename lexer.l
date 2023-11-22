@@ -31,7 +31,30 @@
 "+"       { handleToken(ADD); }
 "-"       { handleToken(MINUS); }
 "*"       { handleToken(MULTIPLY); }
-"/"       { handleToken(DIVIDE); }  // Add more mappings for other Arabic words and tokens
+"/"       { handleToken(DIVIDE); }  
+"("       { handleToken(LEFT_PAREN); }
+")"       { handleToken(RIGHT_PAREN); }
+","       { handleToken(COMMA); }
+";"       { handleToken(SEMICOLON); }
+"."       { handleToken(PERIOD); }
+":"       { handleToken(COLON); }
+"?"       { handleToken(QUESTION_MARK\); }
+"!"       { handleToken(EXCLAMATION_MARK); }
+"="       { handleToken(EQUALS); }
+"<"       { handleToken(LESS_THAN); }
+">"       { handleToken(GREATER_THAN); }
+"["       { handleToken(LEFT_BRACKET); }
+"]"       { handleToken(RIGHT_BRACKET); }
+"{"       { handleToken(LEFT_BRACE); }
+"}"       { handleToken(RIGHT_BRACE); }
+"&"       { handleToken(AMPERSAND); }
+"|"       { handleToken(PIPE); }
+"^"       { handleToken(CARET); }
+"~"       { handleToken(TILDE); }
+"%"       { handleToken(PERCENT); }
+"\\"      { handleToken(BACKSLASH); }
+"'"       { handleToken(SINGLE_QUOTE); }
+"\""      { handleToken(DOUBLE_QUOTE); } // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
