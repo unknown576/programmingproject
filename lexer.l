@@ -28,7 +28,7 @@
 تضمين     { handleToken(INCLUDE); }
 حرف       { handleToken(CHARACTER); }
 باطل      { handleToken(NULL); }  
-"+"       { handleToken(PLUS); }
+"+"       { handleToken(ADD); }
 "-"       { handleToken(MINUS); }
 "*"       { handleToken(MULTIPLY); }
 "/"       { handleToken(DIVIDE); }  // Add more mappings for other Arabic words and tokens
