@@ -27,7 +27,11 @@
 ملف       { handleToken(FILE); }
 تضمين     { handleToken(INCLUDE); }
 حرف       { handleToken(CHARACTER); }
-باطل      { handleToken(NULL); }  // Add more mappings for other Arabic words and tokens
+باطل      { handleToken(NULL); }  
+"+"       { handleToken(PLUS); }
+"-"       { handleToken(MINUS); }
+"*"       { handleToken(MULTIPLY); }
+"/"       { handleToken(DIVIDE); }  // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
