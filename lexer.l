@@ -6,29 +6,29 @@
 %}
 
 %%
-فارغ      { handleToken(TOKEN_VOID); }
-طباعة     { handleToken(TOKEN_PRINT); }
-إذا       { handleToken(TOKEN_IF); }
-إذلا       { handleToken(TOKEN_IFELSE); }
-وإلا       { handleToken(TOKEN_ELSE); }
-بينما     { handleToken(TOKEN_WHILE); }
-ل         { handleToken(TOKEN_FOR); }
-صحيح      { handleToken(TOKEN_INTEGER); }
-عائم      { handleToken(TOKEN_FLOAT); }
-بولياني   { handleToken(TOKEN_BOOLEAN); }
-إدخال     { handleToken(TOKEN_INPUT); }
-إخراج     { handleToken(TOKEN_OUTPUT); }
-صف        { handleToken(TOKEN_CLASS); }
-إرجاع     { handleToken(TOKEN_RETURN); }
-كسر       { handleToken(TOKEN_BREAK); }
-افتراضي   { handleToken(TOKEN_DEFAULT); }
-موديولوس  { handleToken(TOKEN_MODULUS); }
-قسمة      { handleToken(TOKEN_DIVISION); }
-رئيسي     { handleToken(TOKEN_MAIN); }
-ملف       { handleToken(TOKEN_FILE); }
-تضمين     { handleToken(TOKEN_INCLUDE); }
-حرف       { handleToken(TOKEN_CHARACTER); }
-باطل      { handleToken(TOKEN_NULL); }  // Add more mappings for other Arabic words and tokens
+فارغ      { handleToken(VOID); }
+طباعة     { handleToken(PRINT); }
+إذا       { handleToken(IF); }
+إذلا       { handleToken(IFELSE); }
+وإلا       { handleToken(ELSE); }
+بينما     { handleToken(WHILE); }
+ل         { handleToken(FOR); }
+صحيح      { handleToken(INTEGER); }
+عائم      { handleToken(FLOAT); }
+بولياني   { handleToken(BOOLEAN); }
+إدخال     { handleToken(INPUT); }
+إخراج     { handleToken(OUTPUT); }
+صف        { handleToken(CLASS); }
+إرجاع     { handleToken(RETURN); }
+كسر       { handleToken(BREAK); }
+افتراضي   { handleToken(DEFAULT); }
+موديولوس  { handleToken(MODULUS); }
+قسمة      { handleToken(DIVISION); }
+رئيسي     { handleToken(MAIN); }
+ملف       { handleToken(FILE); }
+تضمين     { handleToken(INCLUDE); }
+حرف       { handleToken(CHARACTER); }
+باطل      { handleToken(NULL); }  // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
