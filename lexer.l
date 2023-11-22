@@ -15,8 +15,6 @@
 صحيح      { handleToken(INTEGER); }
 عائم      { handleToken(FLOAT); }
 بولياني   { handleToken(BOOLEAN); }
-إدخال     { handleToken(INPUT); }
-إخراج     { handleToken(OUTPUT); }
 صف        { handleToken(CLASS); }
 إرجاع     { handleToken(RETURN); }
 كسر       { handleToken(BREAK); }
@@ -24,7 +22,6 @@
 موديولوس  { handleToken(MODULUS); }
 قسمة      { handleToken(DIVISION); }
 رئيسي     { handleToken(MAIN); }
-ملف       { handleToken(FILE); }
 تضمين     { handleToken(INCLUDE); }
 حرف       { handleToken(CHARACTER); }
 باطل      { handleToken(NULL); }  
@@ -53,7 +50,15 @@
 "%"       { handleToken(PERCENT); }
 "\\"      { handleToken(BACKSLASH); }
 "'"       { handleToken(SINGLE_QUOTE); }
-"\""       { handleToken(DOUBLE_QUOTE); } // Add more mappings for other Arabic words and tokens
+"+="      { handleToken(INCREMENT_BY); }
+"-="      { handleToken(DECREASE_BY); }
+"/="      { handleToken(DIVIDE_BY); }
+"%="      { handleToken(MOD_BY); }
+"!="      { handleToken(NOT_EQUAL_TO); }
+"<="      { handleToken(LESS_THAN_OR_EQUAL_TO); }
+">="      { handleToken(GREATER_THAN_OR_EQUAL_TO); }
+"\\"      { handleToken(BACKSLASH); }
+ // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
