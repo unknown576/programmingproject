@@ -1,8 +1,7 @@
 %{
-// Header section for C code and definitions
-#include <stdio.h>
-#include <string.h>
-
+    // Header section for C code and definitions
+    #include <stdio.h>
+    #include <string.h>
 %}
 
 %%
