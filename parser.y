@@ -9,6 +9,26 @@ extern FILE *yyin;        // Declaration of the input file for the lexer
 void yyerror(const char *s); // Error handling function
 %}
 
+%union {
+    int intValue;           // For integer values
+    float floatValue;       // For floating-point values
+    double doubleValue;     // For double-precision floating-point values
+    char charValue;         // For a single character
+    char *stringValue;      // For string literals
+    bool boolValue;         // For boolean values
+
+    // You might also include types for more complex structures or pointers
+    // to custom data types depending on your language's needs. For example:
+    struct MyStruct *myStructValue; // For a pointer to a custom data structure
+    void *ptrValue;                 // For a generic pointer type
+
+    // If your language supports complex data types like arrays or user-defined types,
+    // you can include pointers to these as well:
+    int *intArrayValue;             // For an array of integers
+    char **stringArrayValue;        // For an array of strings
+
+    // Add other types as needed
+}
 
 %token VOID RETURN BREAK
 %token PRINT INPUT OUTPUT
