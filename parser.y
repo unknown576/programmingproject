@@ -11,32 +11,21 @@ void yyerror(const char *s); // Error handling function
 %}
 
 %union {
-    int intValue;           // For integer values
-    float floatValue;       // For floating-point values
-    double doubleValue;     // For double-precision floating-point values
-    char charValue;         // For a single character
-    char *stringValue;      // For string literals
-    bool boolValue;         // For boolean values
-
-    // You might also include types for more complex structures or pointers
-    // to custom data types depending on your language's needs. For example:
+    int intValue;                   // For integer values
+    int *intPtrValue;               // For pointers to integers
+    float floatValue;               // For float values
+    float *floatPtrValue;           // For pointers to floats
+    char charValue;                 // For a single character
+    char *charPtrValue;             // For pointers to char
+    bool boolValue;                 // For boolean values
     struct MyStruct *myStructValue; // For a pointer to a custom data structure
-    void *ptrValue;                 // For a generic pointer type
-
-    // If your language supports complex data types like arrays or user-defined types,
-    // you can include pointers to these as well:
-    int *intArrayValue;             // For an array of integers
-    char **stringArrayValue;        // For an array of strings
-
-    // Add other types as needed
 }
 
-%token VOID RETURN BREAK
-%token PRINT INPUT OUTPUT
-%token IF IFELSE ELSE WHILE FOR
-%token INTEGER FLOAT BOOLEAN CHARACTER NULL
-%token CLASS MAIN FILE INCLUDE
-%token MODULUS DIVISION DEFAULT
+%token <intValue> INTEGER MODULUS 
+%token <floatValue> FLOAT DIVISION
+%token <charValue> CHARACTER
+%token <charPtrValue> STRING // if you have string literals
+%token VOID PRINT IF IFELSE ELSE WHILE FOR BOOLEAN INPUT OUTPUT CLASS RETURN BREAK DEFAULT MAIN FILE INCLUDE NULL
 
 %%
 /* C-like Grammar Rules */
