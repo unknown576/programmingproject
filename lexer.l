@@ -4,6 +4,72 @@
     #include <string.h>
 %}
 
+%option noyywrap
+
+%option yylineno
+
+%{
+#define PRINT 1
+#define IF 2
+#define IFELSE 3
+#define ELSE 4
+#define WHILE 5
+#define FOR 6
+
+#define INTEGER 7
+#define FLOAT 8
+#define CHARACTER 9
+#define FLOAT_PTR 10
+#define INTEGER_PTR 11
+#define CHARACTER_PTR 12
+
+#define RETURN 13
+#define DEFAULT 14
+#define INCLUDE 15
+
+#define MODULUS 16
+#define FLOOR_DIVISION 17
+#define PLUS 18
+#define MINUS 19
+#define MULTIPLY 20
+#define DIVIDE 21
+#define EXPONENT 22
+
+#define LEFT_PAREN 23
+#define RIGHT_PAREN 24
+#define COMMA 25
+#define SEMICOLON 26
+#define PERIOD 27
+#define COLON 28
+#define QUESTION_MARK 29
+#define EXCLAMATION_MARK 30
+#define LEFT_BRACKET 31
+#define RIGHT_BRACKET 32
+#define LEFT_BRACE 33
+#define RIGHT_BRACE 34
+
+#define EQUAL_TO 35
+#define LESS_THAN 36
+#define GREATER_THAN 37
+#define AND 38
+#define OR 39
+#define XOR 40
+
+
+#define SINGLE_QUOTE 41
+#define INCREMENT_BY 42
+#define DECREASE_BY 43
+#define DIVIDE_BY 44
+#define MOD_BY 45
+#define NOT_EQUAL_TO 46
+#define LESS_THAN_OR_EQUAL_TO 47
+#define GREATER_THAN_OR_EQUAL_TO 48
+#define BACKSLASH 49
+
+%}
+
+
+
 %%
 طباعة     { return PRINT; }
 إذا       { return IF; }
@@ -22,8 +88,7 @@
 
 إرجاع     { return RETURN; }
 افتراضي   { return DEFAULT; }
-تضمين     { return INCLUDE; }
-باطل      { return NULL; } 
+تضمين     { return INCLUDE; } 
 
 "%"       { return MODULUS; }
 "//"      { return FLOOR_DIVISION; }
@@ -64,7 +129,6 @@
 ">="      { return GREATER_THAN_OR_EQUAL_TO; }
 "\\"      { return BACKSLASH; }
 
- // Add more mappings for other Arabic words and tokens
 
 
 [\t\n]     ;  // Ignore tabs and newlines
