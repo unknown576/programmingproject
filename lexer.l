@@ -5,66 +5,64 @@
 %}
 
 %%
-طباعة     { handleToken(PRINT); }
-إذا       { handleToken(IF); }
-إذلا       { handleToken(IFELSE); }
-وإلا       { handleToken(ELSE); }
-بينما     { handleToken(WHILE); }
-ل         { handleToken(FOR); }
+طباعة     { return PRINT; }
+إذا       { return IF; }
+إذلا       { return IFELSE; }
+وإلا       { return ELSE; }
+بينما     { return WHILE; }
+ل         { return FOR; }
 
-صحيح      { handleToken(INTEGER); }
-عائم      { handleToken(FLOAT); }
-حرف       { handleToken(CHARACTER); }
-بولياني   { handleToken(BOOLEAN); }
+صحيح      { return INTEGER; }
+عائم      { return FLOAT; }
+حرف       { return CHARACTER; }
 
-عائم*     { handleToken(FLOAT_PTR); }
-صحيح*     { handleToken(INTEGER_PTR); }
-حرف*      { handleToken(CHARACTER_PTR); }
+عائم*     { return FLOAT_PTR; }
+صحيح*     { return INTEGER_PTR; }
+حرف*      { return CHARACTER_PTR; }
 
-إرجاع     { handleToken(RETURN); }
-افتراضي   { handleToken(DEFAULT); }
-تضمين     { handleToken(INCLUDE); }
-باطل      { handleToken(NULL); } 
+إرجاع     { return RETURN; }
+افتراضي   { return DEFAULT; }
+تضمين     { return INCLUDE; }
+باطل      { return NULL; } 
 
-"%"       { handleToken(MODULUS); }
-"//"      { handleToken(FLOOR_DIVISION); }
-"+"       { handleToken(ADD); }
-"-"       { handleToken(MINUS); }
-"*"       { handleToken(MULTIPLY); }
-"/"       { handleToken(DIVIDE); }  
-"**"      { handleToken(EXPONENT); } 
+"%"       { return MODULUS; }
+"//"      { return FLOOR_DIVISION; }
+"+"       { return ADD; }
+"-"       { return MINUS; }
+"*"       { return MULTIPLY; }
+"/"       { return DIVIDE; }  
+"**"      { return EXPONENT; } 
 
 
-"("       { handleToken(LEFT_PAREN); }
-")"       { handleToken(RIGHT_PAREN); }
-","       { handleToken(COMMA); }
-";"       { handleToken(SEMICOLON); }
-"."       { handleToken(PERIOD); }
-":"       { handleToken(COLON); }
-"?"       { handleToken(QUESTION_MARK); }
-"!"       { handleToken(EXCLAMATION_MARK); }
-"["       { handleToken(LEFT_BRACKET); }
-"]"       { handleToken(RIGHT_BRACKET); }
-"{"       { handleToken(LEFT_BRACE); }
-"}"       { handleToken(RIGHT_BRACE); }
+"("       { return LEFT_PAREN; }
+")"       { return RIGHT_PAREN; }
+","       { return COMMA; }
+";"       { return SEMICOLON; }
+"."       { return PERIOD; }
+":"       { return COLON; }
+"?"       { return QUESTION_MARK; }
+"!"       { return EXCLAMATION_MARK; }
+"["       { return LEFT_BRACKET; }
+"]"       { return RIGHT_BRACKET; }
+"{"       { return LEFT_BRACE; }
+"}"       { return RIGHT_BRACE; }
 
-"="       { handleToken(EQUALS); }
-"<"       { handleToken(LESS_THAN); }
-">"       { handleToken(GREATER_THAN); }
-"&&"      { handleToken(AND); } 
-"||"      { handleToken(OR); }
-"^"       { handleToken(XOR); }  
-"%"       { handleToken(PERCENT); }
+"="       { return EQUAL_TO; }
+"<"       { return LESS_THAN; }
+">"       { return GREATER_THAN; }
+"&&"      { return AND; } 
+"||"      { return OR; }
+"^"       { return XOR; }  
 
-"'"       { handleToken(SINGLE_QUOTE); }
-"+="      { handleToken(INCREMENT_BY); }
-"-="      { handleToken(DECREASE_BY); }
-"/="      { handleToken(DIVIDE_BY); }
-"%="      { handleToken(MOD_BY); }
-"!="      { handleToken(NOT_EQUAL_TO); }
-"<="      { handleToken(LESS_THAN_OR_EQUAL_TO); }
-">="      { handleToken(GREATER_THAN_OR_EQUAL_TO); }
-"\\"      { handleToken(BACKSLASH); }
+"'"       { return SINGLE_QUOTE; }
+"+="      { return INCREMENT_BY; }
+"-="      { return DECREASE_BY; }
+"/="      { return DIVIDE_BY; }
+"%="      { return MOD_BY; }
+"!="      { return NOT_EQUAL_TO; }
+"<="      { return LESS_THAN_OR_EQUAL_TO; }
+">="      { return GREATER_THAN_OR_EQUAL_TO; }
+"\\"      { return BACKSLASH; }
 
  // Add more mappings for other Arabic words and tokens
 
