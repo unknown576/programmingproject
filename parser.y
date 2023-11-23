@@ -42,7 +42,7 @@ void yyerror(const char *s); // Error handling function
 
 %token <intValue> MODULUS
 %token <intValue> FLOOR_DIVISION
-%token <floatValue> ADD
+%token <floatValue> PLUS
 %token <floatValue> MINUS
 %token <floatValue> MULTIPLY
 %token <floatValue> DIVIDE

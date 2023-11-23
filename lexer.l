@@ -27,7 +27,7 @@
 
 "%"       { return MODULUS; }
 "//"      { return FLOOR_DIVISION; }
-"+"       { return ADD; }
+"+"       { return PLUS; }
 "-"       { return MINUS; }
 "*"       { return MULTIPLY; }
 "/"       { return DIVIDE; }  
