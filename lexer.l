@@ -50,9 +50,9 @@
 "="       { handleToken(EQUALS); }
 "<"       { handleToken(LESS_THAN); }
 ">"       { handleToken(GREATER_THAN); }
-"&&"      { handleToken(AMPERSAND); }
-"||"      { handleToken(PIPE); }
-"^"       { handleToken(CARET); }
+"&"      { handleToken(AMPERSAND); } // AND
+"|"      { handleToken(PIPE); } // OR
+"^"       { handleToken(CARET); }  // XOR
 "%"       { handleToken(PERCENT); }
 "\\"      { handleToken(BACKSLASH); }
 "'"       { handleToken(SINGLE_QUOTE); }
