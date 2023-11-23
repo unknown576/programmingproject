@@ -33,23 +33,23 @@ void yyerror(const char *s); // Error handling function
 %token <intValue> INTEGER
 %token <floatValue> FLOAT
 %token <charValue> CHARACTER
-%token BOOLEAN     // Assuming boolean does not need a specific value in %union
-%token CLASS       // Assuming class does not carry a specific value in %union
-%token FLOAT_PTR  // For pointers, you might want to add specific types in %union
-%token INTEGER_PTR
-%token CHARACTER_PTR
+%token <boolValue> BOOLEAN     // Assuming boolean does not need a specific value in %union
+
+%token <floatPtr> FLOAT_PTR
+%token <intPtr> INTEGER_PTR
+%token <charPtr> CHARACTER_PTR
 
 %token RETURN
 %token DEFAULT
 %token INCLUDE
 %token NULL
 
-%token MODULUS
-%token DIVISION
-%token <intValue> ADD
-%token <intValue> MINUS
-%token <intValue> MULTIPLY
-%token <intValue> DIVIDE
+%token <intValue> MODULUS
+%token <intValue> FLOOR_DIVISION
+%token <floatValue> ADD
+%token <floatValue> MINUS
+%token <floatValue> MULTIPLY
+%token <floatValue> DIVIDE
 
 %token LEFT_PAREN
 %token RIGHT_PAREN
@@ -107,7 +107,11 @@ declaration
 type
     : INTEGER
     | FLOAT
+    | CHARACTER
     | BOOLEAN
+    | FLOAT_PTR
+    | INTEGER_PTR
+    | CHARACTER_PTR
     /* Add other types */
     ;
 

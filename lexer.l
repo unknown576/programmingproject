@@ -17,7 +17,7 @@
 عائم      { handleToken(FLOAT); }
 حرف       { handleToken(CHARACTER); }
 بولياني   { handleToken(BOOLEAN); }
-صف        { handleToken(CLASS); }
+
 عائم*     { handleToken(FLOAT_PTR); }
 صحيح*     { handleToken(INTEGER_PTR); }
 حرف*      { handleToken(CHARACTER_PTR); }
@@ -27,8 +27,8 @@
 تضمين     { handleToken(INCLUDE); }
 باطل      { handleToken(NULL); } 
 
-موديولوس  { handleToken(MODULUS); }
-قسمة      { handleToken(DIVISION); }
+"%"       { handleToken(MODULUS); }
+"//"      { handleToken(FLOOR_DIVISION); }
 "+"       { handleToken(ADD); }
 "-"       { handleToken(MINUS); }
 "*"       { handleToken(MULTIPLY); }
@@ -54,7 +54,7 @@
 "||"      { handleToken(PIPE); }
 "^"       { handleToken(CARET); }
 "%"       { handleToken(PERCENT); }
-"\\"      { handleToken(BACKSLASH); }
+
 "'"       { handleToken(SINGLE_QUOTE); }
 "+="      { handleToken(INCREMENT_BY); }
 "-="      { handleToken(DECREASE_BY); }
