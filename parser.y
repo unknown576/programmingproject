@@ -120,7 +120,6 @@ statement
     | while_statement
     | for_statement
     | return_statement
-    | print_statement
     ;
 
 // Define how an expression statement looks like
@@ -130,11 +129,36 @@ expression_statement
 
 // Placeholder for expressions. This needs to be defined according to the expressions in your language
 expression
-    : type identifier '=' type expression_statement
+    : identifier
+    |
+    | type identifier '=' type expression_statement
     | type identifier
-    | identifier relations identifier
-    | expression comparisons expression
-    | identifier
+
+    | expression '==' expression { $$ = $1 == $3; }
+    | expression '!=' expression { $$ = $1 != $3; }
+    | expression '>=' expression { $$ = $1 >= $3; }
+    | expression '<=' expression { $$ = $1 <= $3; }
+    | expression '>' expression { $$ = $1 > $3; } 
+    | expression '<' expression { $$ = $1 < $3; }
+
+    | expression '+=' expression { $$ = $1 += $3; }
+    | expression '-=' expression { $$ = $1 -= $3; }
+    | expression '/=' expression { $$ = $1 /= $3; }
+    | expression '%=' expression { $$ = $1 %= $3; }
+
+    | expression '%' expression { $$ = $1 % $3; } 
+    | expression '//' expression { $$ = $1 // $3; }
+    | expression '+' expression { $$ = $1 + $3; }
+    | expression '-' expression { $$ = $1 - $3; }
+    | expression '/' expression { $$ = $1 / $3; }
+    | expression '*' expression { $$ = $1 * $3; }
+    | expression '**' expression { $$ = $1 * $3; }
+
+    | expression '&&' expression { $$ = $1 && $3; }
+    | expression '||' expression { $$ = $1 || $3; }
+    | expression '^' expression { $$ = $1 ^ $3; }
+
+    
     ;
 
 // Rule for a compound statement (block of code enclosed in braces)
@@ -167,13 +191,9 @@ for_statement
 
 // Rule for return statements
 return_statement
-    : RETURN expression ';'
+    : RETURN expression ';' { $$ = $2; }
     ;
 
-// Rule for print statements
-print_statement
-    : PRINT '(' expression ')' ';'
-    ;
 
 // Placeholder for identifiers (variable names, function names, etc.)
 identifier
@@ -186,16 +206,9 @@ parameters
     | expression ',' parameters
     ;
 
-relations
-    : EQUAL_TO
-    | LESS_THAN
-    | GREATER_THAN
-    | NOT_EQUAL_TO
-    | LESS_THAN_OR_EQUAL_TO
-    | GREATER_THAN_OR_EQUAL_TO
 
 comparisons
-    : AND
+    : AND { $$ = &&}
     | OR
     | XOR
 %%
