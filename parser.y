@@ -22,7 +22,6 @@ void yyerror(const char *s); // Error handling function
 }
 
 
-%token VOID
 %token PRINT
 %token IF
 %token IFELSE
@@ -33,7 +32,7 @@ void yyerror(const char *s); // Error handling function
 %token <intValue> INTEGER
 %token <floatValue> FLOAT
 %token <charValue> CHARACTER
-%token <boolValue> BOOLEAN     // Assuming boolean does not need a specific value in %union
+%token <boolValue> BOOLEAN    
 
 %token <floatPtr> FLOAT_PTR
 %token <intPtr> INTEGER_PTR
@@ -50,6 +49,7 @@ void yyerror(const char *s); // Error handling function
 %token <floatValue> MINUS
 %token <floatValue> MULTIPLY
 %token <floatValue> DIVIDE
+%token <floatValue> EXPONENT
 
 %token LEFT_PAREN
 %token RIGHT_PAREN
@@ -67,11 +67,10 @@ void yyerror(const char *s); // Error handling function
 %token EQUALS
 %token LESS_THAN
 %token GREATER_THAN
-%token AMPERSAND
-%token PIPE
-%token CARET
+%token AND
+%token OR
+%token XOR
 %token PERCENT
-%token BACKSLASH
 %token SINGLE_QUOTE
 %token INCREMENT_BY
 %token DECREASE_BY
@@ -101,6 +100,7 @@ function_definition
 // Rule for declarations (like variable declarations)
 declaration
     : type identifier ';'
+    | 
     ;
 
 // Rule for different types
@@ -112,7 +112,6 @@ type
     | FLOAT_PTR
     | INTEGER_PTR
     | CHARACTER_PTR
-    /* Add other types */
     ;
 
 // Rule for a statement. This is a placeholder and should include all possible statements in your language
@@ -123,7 +122,7 @@ statement
     | while_statement
     | for_statement
     | return_statement
-    /* Add other statements */
+    | print_statement
     ;
 
 // Define how an expression statement looks like
@@ -133,7 +132,9 @@ expression_statement
 
 // Placeholder for expressions. This needs to be defined according to the expressions in your language
 expression
-    : /* Define expression rules */
+    : type identifier EQUALS type expression_statement
+    | type identifier
+    
     ;
 
 // Rule for a compound statement (block of code enclosed in braces)
@@ -151,6 +152,7 @@ statement_list
 if_statement
     : IF '(' expression ')' statement
     | IF '(' expression ')' statement ELSE statement
+    | IF '(' expression ')' statement IFELSE '(' expression ')' statement ELSE statement
     ;
 
 // Rule for while loops
@@ -166,6 +168,11 @@ for_statement
 // Rule for return statements
 return_statement
     : RETURN expression ';'
+    ;
+
+// Rule for print statements
+print_statement
+    : PRINT '(' expression ')' ';'
     ;
 
 // Placeholder for identifiers (variable names, function names, etc.)

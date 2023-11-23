@@ -5,7 +5,6 @@
 %}
 
 %%
-فارغ      { handleToken(VOID); }
 طباعة     { handleToken(PRINT); }
 إذا       { handleToken(IF); }
 إذلا       { handleToken(IFELSE); }
@@ -33,6 +32,8 @@
 "-"       { handleToken(MINUS); }
 "*"       { handleToken(MULTIPLY); }
 "/"       { handleToken(DIVIDE); }  
+"**"      { handleToken(EXPONENT); } 
+
 
 "("       { handleToken(LEFT_PAREN); }
 ")"       { handleToken(RIGHT_PAREN); }
@@ -50,9 +51,9 @@
 "="       { handleToken(EQUALS); }
 "<"       { handleToken(LESS_THAN); }
 ">"       { handleToken(GREATER_THAN); }
-"&&"       { handleToken(AMPERSAND); } // AND
-"||"       { handleToken(PIPE); } // OR
-"^"       { handleToken(CARET); }  // XOR
+"&&"      { handleToken(AND); } 
+"||"      { handleToken(OR); }
+"^"       { handleToken(XOR); }  
 "%"       { handleToken(PERCENT); }
 
 "'"       { handleToken(SINGLE_QUOTE); }
