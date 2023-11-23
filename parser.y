@@ -27,9 +27,9 @@ void yyerror(const char *s); // Error handling function
 %token WHILE
 %token FOR
 
-%token <intValue> INTEGER
-%token <floatValue> FLOAT
-%token <charValue> CHARACTER  
+%token <intValue> INTEGER_V
+%token <floatValue> FLOAT_V
+%token <charValue> CHARACTER_V  
 
 %token <floatPtr> FLOAT_PTR
 %token <intPtr> INTEGER_PTR
