@@ -667,7 +667,7 @@ struct TokenList* build_TokenList(const char* fp) {
     // Iterate
     int i = 0;
     int exit;
-    while (*fp != '\0' && (exit = next_Token(&fp, tok)) == 0) {
+    while (*fp != '\0' && (exit = next_Token(&fp, tok)) == 0) { // Checks that current char isnt /0 (end of file) and stores token
         i++;
         if (head == NULL) {
             head = new_TokenList(tok);
