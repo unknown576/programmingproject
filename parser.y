@@ -197,8 +197,18 @@ return_statement
 
 // Placeholder for identifiers (variable names, function names, etc.)
 identifier
-    : /* Token for identifiers */
+    : 
+    | 
+    | /* Token for identifiers */
     ;
+
+values
+    : 
+    | 
+    | /* Token for values(numbers or strings) */
+    ;
+
+
 
 parameters
     : /* empty */
