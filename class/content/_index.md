@@ -12,9 +12,6 @@ draft: false
 
 ### Part A - Answer the Questions
 
-1. [Can I get a job after I study Compilers?]({{< ref "/page/can-i-get-a-job-in-compilers" >}})
-2. [Why are there so many programming languages?]({{< ref "/page/why-so-many-programming-languages" >}})
-3. [What are the differences between programming languages?]({{< ref "/page/what-are-the-differences-in-programming-languages" >}})
 4. [What is a Grammar in Programming Languages?]({{< ref "/page/what-is-a-programming-language-grammar" >}})
 5. [How to build a new programming language]({{< ref "/page/how-to-build-a-new-programming-language" >}})
 6. [What is a programming language parser?]({{< ref "/page/what-is-a-programming-language-parser" >}})
